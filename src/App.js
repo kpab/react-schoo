@@ -3,7 +3,7 @@ import Clock from './Clock';
 
 function App() {
   return (
-    <Clock date={new Date()} />
+    <Clock />
   );
 }
 
