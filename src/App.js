@@ -3,8 +3,13 @@ import './App.css';
 
 
 function App() {
-  function formatName(name) {
-    return `${name.firstName} ${name.lastName}`
+  function greetingName(name) {
+    if (name) {
+      return <h1>{`Hello, ${name.firstName} ${name.lastName}`}</h1>
+    } else {
+      return <h1>Hello, Stranger</h1>
+    }
+
   }
 
   const name = {
@@ -13,8 +18,9 @@ function App() {
   }
 
   return (
-    <h1>Hello, {formatName(name)}</h1>
-
+    <>
+      {greetingName(name)}
+    </>
   );
 }
 
