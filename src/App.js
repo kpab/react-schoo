@@ -1,13 +1,13 @@
 function App() {
-  function handleClick(e) {
+  function handleClick(e, name) {
     e.preventDefault();
-    console.log('clicked!')
+    console.log(e);
+    console.log(name);
   }
   return (
     <div>
-      <h1 onClick={handleClick}>
-        click me
-      </h1>
+      <p onClick={e => handleClick(e, 'John')}>John</p>
+      <p onClick={e => handleClick(e, 'Paul')}>Paul</p>
     </div>
   );
 }
