@@ -1,14 +1,14 @@
-function App() {
-  function handleClick(e, name) {
-    e.preventDefault();
-    console.log(e);
-    console.log(name);
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
   }
+  return <h1>Please sign up.</h1>;
+}
+
+function App() {
   return (
-    <div>
-      <p onClick={e => handleClick(e, 'John')}>John</p>
-      <p onClick={e => handleClick(e, 'Paul')}>Paul</p>
-    </div>
+    <Greeting isLoggedIn={true} />
   );
 }
 
