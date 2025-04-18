@@ -1,17 +1,22 @@
-function Dialog(props) {
+function SplitPane(props) {
   return (
-    <div className="dialog">
-      {props.children}
+    <div className="split-pane">
+      <div className="split-pane-left">
+        {props.left}
+      </div>
+      <div className="split-pane-right">
+        {props.right}
+      </div>
     </div>
   )
 }
 
 function App() {
   return (
-    <Dialog>
-      <h1>Welcome</h1>
-      <h2>It's sunny today.</h2>
-    </Dialog>
+    <SplitPane
+      left={<h1>Welcome</h1>}
+      right={<h2>It's sunny today.</h2>}
+    />
   );
 }
 
