@@ -7,8 +7,14 @@ function Greeting(props) {
 }
 
 function App() {
+  const isLoggedIn = true;
   return (
-    <Greeting isLoggedIn={true} />
+    <div>
+      {
+        isLoggedIn &&
+        <h1>Welcome back!</h1>
+      }
+    </div>
   );
 }
 
