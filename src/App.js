@@ -1,28 +1,18 @@
-import React from 'react'
+function Dialog(props) {
+  return (
+    <div className="dialog">
+      {props.children}
+    </div>
+  )
+}
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'Paul'
-    }
-  }
-
-  handleChange = e => {
-    this.setState({ value: e.target.value })
-  }
-
-  render() {
-    return (
-      <>
-        <select value={this.state.value} onChange={this.handleChange}>
-          <option value="John">John</option>
-          <option value="Paul">Paul</option>
-        </select>
-        <p>{this.state.value}</p>
-      </>
-    )
-  }
+function App() {
+  return (
+    <Dialog>
+      <h1>Welcome</h1>
+      <h2>It's sunny today.</h2>
+    </Dialog>
+  );
 }
 
 export default App;
