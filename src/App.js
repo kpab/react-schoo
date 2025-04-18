@@ -1,11 +1,9 @@
-import Welcome from "./components/Welcome";
+import Clock from "./Clock";
 
 function App() {
   return (
     <div>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
+      <Clock date={new Date()} />
     </div>
   );
 }
