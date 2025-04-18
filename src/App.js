@@ -1,20 +1,18 @@
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <h1>Welcome back!</h1>;
-  }
-  return <h1>Please sign up.</h1>;
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number}>{number}</li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
 }
 
 function App() {
-  const isLoggedIn = true;
+  const numbers = [1, 2, 3, 4, 5]
   return (
     <div>
-      {
-        isLoggedIn
-          ? <h1>Welcome back!</h1>
-          : <h1>Please sign up.</h1>
-      }
+      <NumberList numbers={numbers} />
     </div>
   );
 }
