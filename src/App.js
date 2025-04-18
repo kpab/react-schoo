@@ -1,3 +1,5 @@
+import Clock from "./Clock";
+
 const shoppingList = [
   { id: 1, name: '牛肉', price: 500 },
   { id: 2, name: 'たまねぎ', price: 200 },
@@ -8,6 +10,7 @@ function App(props) {
   return (
     <>
       <h1>Shopping List</h1>
+      <Clock />
       <ul>
         {
           shoppingList.map(item => {
