@@ -1,4 +1,4 @@
-import Clock from "./Clock";
+import ListItem from './ListItem'
 
 const shoppingList = [
   { id: 1, name: '牛肉', price: 500 },
@@ -10,17 +10,9 @@ function App(props) {
   return (
     <>
       <h1>Shopping List</h1>
-      <Clock />
       <ul>
         {
-          shoppingList.map(item => {
-            return (
-              <li key={item.id}>
-                <h2>{item.name}</h2>
-                <p>¥{item.price}</p>
-              </li>
-            )
-          })
+          shoppingList.map(item => <ListItem key={item.id} item={item} />)
         }
       </ul>
     </>
