@@ -4,7 +4,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Hello'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
     }
   }
 
@@ -15,8 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <input type="text" value={this.state.text} onChange={this.handleChage} />
-        <p>{this.state.text.split('').reverse().join('')}</p>
+        <textarea value={this.state.text} onChange={this.handleChage} />
+        <p>{this.state.text}</p>
       </>
     )
   }
