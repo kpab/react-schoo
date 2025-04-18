@@ -1,23 +1,27 @@
-function SplitPane(props) {
-  return (
-    <div className="split-pane">
-      <div className="split-pane-left">
-        {props.left}
-      </div>
-      <div className="split-pane-right">
-        {props.right}
-      </div>
-    </div>
-  )
-}
+const shoppingList = [
+  { id: 1, name: '牛肉', price: 500 },
+  { id: 2, name: 'たまねぎ', price: 200 },
+  { id: 3, name: 'にんじん', price: 100 },
+]
 
-function App() {
+function App(props) {
   return (
-    <SplitPane
-      left={<h1>Welcome</h1>}
-      right={<h2>It's sunny today.</h2>}
-    />
-  );
+    <>
+      <h1>Shopping List</h1>
+      <ul>
+        {
+          shoppingList.map(item => {
+            return (
+              <li key={item.id}>
+                <h2>{item.name}</h2>
+                <p>¥{item.price}</p>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </>
+  )
 }
 
 export default App;
