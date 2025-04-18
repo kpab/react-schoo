@@ -1,19 +1,25 @@
-function ListItem(props) {
-  return (
-    <li>{props.value}</li>
-  );
-}
+import React from 'react'
 
-function App() {
-  const numbers = [1, 2, 3, 4, 5]
-  const listItems = numbers.map(number => {
-    return <ListItem key={number.toString()} value={number} />
-  });
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'Hello'
+    }
+  }
+
+  handleChage = e => {
+    this.setState({ text: e.target.value })
+  }
+
+  render() {
+    return (
+      <>
+        <input type="text" value={this.state.text} onChange={this.handleChage} />
+        <p>{this.state.text.split('').reverse().join('')}</p>
+      </>
+    )
+  }
 }
 
 export default App;
