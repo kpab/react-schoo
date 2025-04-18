@@ -4,19 +4,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+      value: 'Paul'
     }
   }
 
-  handleChage = e => {
-    this.setState({ text: e.target.value })
+  handleChange = e => {
+    this.setState({ value: e.target.value })
   }
 
   render() {
     return (
       <>
-        <textarea value={this.state.text} onChange={this.handleChage} />
-        <p>{this.state.text}</p>
+        <select value={this.state.value} onChange={this.handleChange}>
+          <option value="John">John</option>
+          <option value="Paul">Paul</option>
+        </select>
+        <p>{this.state.value}</p>
       </>
     )
   }
