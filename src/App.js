@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import ListItem from './ListItem'
 
 const shoppingList = [
@@ -7,13 +8,25 @@ const shoppingList = [
 ]
 
 function App(props) {
+  const [list, setList] = useState(shoppingList)
+  const remainingAmount = list.filter(item => !item.isDone).length
+
+  const handleClick = id => {
+    const l = list.slice();
+    l.forEach(item => {
+      if (item.id === id) {
+        item.isDone = !item.isDone
+      }
+    })
+    setList(l)
+  }
+
   return (
     <>
       <h1>Shopping List</h1>
+      <p>残数: {remainingAmount}</p>
       <ul>
-        {
-          shoppingList.map(item => <ListItem key={item.id} item={item} />)
-        }
+        {list.map(item => <ListItem key={item.id} item={item} onClick={handleClick} />)}
       </ul>
     </>
   )
