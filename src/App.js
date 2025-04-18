@@ -1,19 +1,18 @@
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    <li key={number}>{number}</li>
-  );
+function ListItem(props) {
   return (
-    <ul>{listItems}</ul>
+    <li>{props.value}</li>
   );
 }
 
 function App() {
   const numbers = [1, 2, 3, 4, 5]
+  const listItems = numbers.map(number => {
+    return <ListItem key={number.toString()} value={number} />
+  });
   return (
-    <div>
-      <NumberList numbers={numbers} />
-    </div>
+    <ul>
+      {listItems}
+    </ul>
   );
 }
 
